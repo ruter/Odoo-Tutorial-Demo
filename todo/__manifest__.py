@@ -1,17 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "todo",
+    'name': "待办事项",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': "待办事项",
 
-    'description': """
-        Long description of module's purpose
-    """,
+    'description': "待办事项",
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Ruter",
+    'website': "https://ruterly.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
@@ -27,10 +23,11 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-	'views/menus.xml',
+	    'views/menus.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    'application': True,
 }
