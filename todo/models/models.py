@@ -14,3 +14,11 @@ class TodoTask(models.Model):
         ('normal', '普通'),
         ('urgency', '紧急')
     ], default='todo', string='紧急程度')
+    deadline = fields.Datetime(u'截止时间')
+    is_expired = fields.Boolean(u'已过期', compute='_compute_is_expired')
+
+    @api.depends('deadline')
+    @api.multi
+    def _compute_is_expired(self):
+        for record in self:
+            record.is_expired = record.deadline < fields.Datetime.now()

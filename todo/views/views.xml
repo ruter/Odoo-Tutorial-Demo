@@ -5,9 +5,11 @@
             <field name="model">todo.task</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree string="Todo">
+                <tree string="Todo" decoration-danger="is_expired">
                     <field name="name"/>
+                    <field name="deadline"/>
                     <field name="is_done"/>
+                    <field name="is_expired" invisible="True"/>
                 </tree>
             </field>
         </record>
