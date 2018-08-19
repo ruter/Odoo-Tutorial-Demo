@@ -37,4 +37,7 @@ class TodoTask(models.Model):
     @api.multi
     def _compute_is_expired(self):
         for record in self:
-            record.is_expired = record.deadline < fields.Datetime.now()
+            if record.deadline:
+                record.is_expired = record.deadline < fields.Datetime.now()
+            else:
+                record.is_expired = False
