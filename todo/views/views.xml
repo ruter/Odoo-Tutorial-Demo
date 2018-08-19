@@ -13,5 +13,17 @@
                 </tree>
             </field>
         </record>
+
+        <record id="todo_category_view_tree" model="ir.ui.view">
+            <field name="name">todo.category.view_tree</field>
+            <field name="model">todo.category</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Todo Category">
+                    <field name="name"/>
+                    <field name="count"/>
+                </tree>
+            </field>
+        </record>
     </data>
 </odoo>
