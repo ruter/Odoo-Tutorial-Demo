@@ -14,6 +14,10 @@
                     <filter string="待办" name="todo" domain="[('priority', '=', 'todo')]"/>
                     <filter string="普通" name="normal" domain="[('priority', '=', 'normal')]"/>
                     <filter string="紧急" name="urgency" domain="[('priority', '=', 'urgency')]"/>
+                    <group expand="0" string="分组">
+                        <filter string="分类" domain="[]" context="{'group_by':'category_id'}"/>
+                        <filter string="紧急程度" domain="[]" context="{'group_by':'priority'}"/>
+                    </group>
                 </search>
             </field>
         </record>
