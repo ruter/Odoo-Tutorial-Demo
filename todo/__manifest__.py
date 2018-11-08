@@ -22,6 +22,7 @@
     'data': [
         'security/todo_security.xml',
         'security/ir.model.access.csv',
+        'security/ir_rule.xml',
         'views/views.xml',
         'views/templates.xml',
 	    'views/menus.xml',
