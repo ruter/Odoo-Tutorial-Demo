@@ -22,7 +22,7 @@
         </record>
         <!-- 子菜单定义 -->
         <menuitem action="action_todo_category" id="submenu_todo_category" name="分类"
-                  parent="menu_todo_submenu" sequence="8"/>
+                  parent="menu_todo_submenu" sequence="8" groups="todo.group_todo_manager"/>
         <menuitem action="action_todo_task" id="submenu_todo_task" name="待办事项"
                   parent="menu_todo_submenu" sequence="10"/>
     </data>
