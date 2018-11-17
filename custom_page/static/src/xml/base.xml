@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="DemoPage">
+        <div class="container-fluid py-2 o_web_settings_dashboard">
+            <div class="form-row">
+                <div class="col-12 col-lg-6 o_web_settings_dashboard_col">
+                    <wired-card elevation="3">
+                        <div class="mt8">
+                            <wired-input placeholder="Enter name"></wired-input>
+                        </div>
+                        <div>
+                            <wired-radio-group selected="two">
+                                <wired-radio name="one" text="Radio One"></wired-radio>
+                                <wired-radio name="two" text="Radio Two"></wired-radio>
+                                <wired-radio name="three" text="Radio Three"></wired-radio>
+                            </wired-radio-group>
+                        </div>
+                        <div class="mt8 mr8 mb8 text-right">
+                            <wired-button>Cancel</wired-button>
+                            <wired-button elevation="3" class="demo-submit">Submit</wired-button>
+                        </div>
+                    </wired-card>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>
