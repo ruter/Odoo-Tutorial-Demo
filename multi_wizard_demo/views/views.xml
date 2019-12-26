@@ -1,5 +1,39 @@
 <odoo>
   <data>
+    <record model="ir.ui.view" id="multi_wizard_demo.list">
+      <field name="name">demo.multi.step.wizard.form</field>
+      <field name="model">demo.multi.step.wizard</field>
+      <field name="mode">primary</field>
+      <field name="inherit_id" ref="multi_step_wizard.multi_step_wizard_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//footer" position="before">
+          <group name="Start" attrs="{'invisible': [('state', '!=', 'start')]}">
+            <group>
+              <field name="step1"/>
+            </group>
+          </group>
+          <group name="Step 2" attrs="{'invisible': [('state', '!=', 'step2')]}">
+            <group>
+              <field name="step2"/>
+            </group>
+          </group>
+          <group name="Step 3" attrs="{'invisible': [('state', '!=', 'step3')]}">
+            <group>
+              <field name="step3"/>
+            </group>
+          </group>
+          <div name="Final" attrs="{'invisible': [('state', '!=', 'final')]}">
+            <p>Done.</p>
+          </div>
+        </xpath>
+      </field>
+    </record>
 
+    <record model="ir.actions.act_window" id="action_multi_wizard_demo">
+      <field name="name">Multi Step Wizard Demo</field>
+      <field name="res_model">demo.multi.step.wizard</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+    </record>
   </data>
 </odoo>
