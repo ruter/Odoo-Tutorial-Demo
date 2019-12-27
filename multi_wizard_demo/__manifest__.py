@@ -9,7 +9,10 @@
     'category': 'Demo',
     'version': '12.0.1.0.0',
 
-    'depends': ['base'],
+    'depends': [
+        'base', 
+        'multi_step_wizard',
+    ],
 
     # always loaded
     'data': [
