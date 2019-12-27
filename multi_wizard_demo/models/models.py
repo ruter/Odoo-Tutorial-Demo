@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 
 
-class Users(models.TransientModel):
+class DemoMultiStepWizard(models.TransientModel):
     _name = 'demo.multi.step.wizard'
     _inherit = ['multi.step.wizard.mixin']
     _description = 'Multi Step Wizard Demo'
@@ -20,7 +20,7 @@ class Users(models.TransientModel):
             ('step3', 'Step 3'),
             ('final', 'Final'),
         ]
-    
+
     def state_exit_start(self):
         self.state = 'step2'
 
