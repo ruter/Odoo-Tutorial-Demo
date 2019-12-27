@@ -1,6 +1,6 @@
 <odoo>
   <data>
-    <record model="ir.ui.view" id="multi_wizard_demo.list">
+    <record model="ir.ui.view" id="multi_step_wizard_demo_form">
       <field name="name">demo.multi.step.wizard.form</field>
       <field name="model">demo.multi.step.wizard</field>
       <field name="mode">primary</field>
@@ -34,6 +34,17 @@
       <field name="res_model">demo.multi.step.wizard</field>
       <field name="view_mode">form</field>
       <field name="target">new</field>
+    </record>
+
+    <record model="ir.ui.view" id="multi_step_wizard_demo_user_form">
+      <field name="name">demo.multi.step.wizard.user.form</field>
+      <field name="model">res.users</field>
+      <field name="inherit_id" ref="base.view_users_form"/>
+      <field name="arch" type="xml">
+        <header position="inside">
+          <button type="action" name="%(action_multi_wizard_demo)d" string="Multi Wizard" class="oe_highlight"/>
+        </header>
+      </field>
     </record>
   </data>
 </odoo>
