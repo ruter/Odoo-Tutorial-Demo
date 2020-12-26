@@ -1,8 +1,10 @@
+import io
 import base64
 import logging
 from reportlab.pdfbase import pdfmetrics, ttfonts
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import cm
+from PyPDF2 import PdfFileWriter, PdfFileReader
 
 from odoo import fields, models
 
@@ -34,6 +36,7 @@ class IrHttp(models.AbstractModel):
         生成水印
         :return:
         """
+        # 水印文件临时存储路径
         filename = f'/tmp/watermark.pdf'
         watermark = self._get_watermark()
         # 获取画布并修改原点坐标
@@ -60,3 +63,23 @@ class IrHttp(models.AbstractModel):
                 c.drawString(i * cm, j * cm, watermark)
         c.save()
         return filename
+
+    def add_watermark(self, content):
+        """
+        添加水印
+        :param content:
+        :return:
+        """
+        watermark = self._generate_watermark()
+        pdf_input = PdfFileReader(io.BytesIO(content), strict=False)
+        watermark = PdfFileReader(open(watermark, "rb"), strict=False)
+        pdf_output = PdfFileWriter()
+        page_count = pdf_input.getNumPages()
+        for page_number in range(page_count):
+            input_page = pdf_input.getPage(page_number)
+            input_page.mergePage(watermark.getPage(0))
+            pdf_output.addPage(input_page)
+        stream = io.BytesIO()
+        pdf_output.write(stream)
+        data = stream.getvalue()
+        return data
