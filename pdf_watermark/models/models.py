@@ -53,10 +53,9 @@ class IrHttp(models.AbstractModel):
             _logger.error(f'Register Font Error: {e}')
 
         # 设置字体及大小，旋转 -20 度并设置颜色和透明度
-        c.setFont(font_name, 16)
+        c.setFont(font_name, 14)
         c.rotate(20)
-        c.setFillColorRGB(0, 0, 0)
-        c.setFillColor('#27334C', 0.2)
+        c.setFillColor('#27334C', 0.15)
         # 平铺写入水印
         for i in range(0, 30, 6):
             for j in range(0, 35, 5):
